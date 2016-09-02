@@ -5,6 +5,8 @@ import           Hakyll
 import qualified Data.Set as S
 import           Text.Pandoc.Options
 
+mainDomain :: String
+mainDomain = "http://cryptica.github.io/tensidedcoin"
 
 mainConfig :: Configuration
 mainConfig = def { destinationDirectory = "docs" }
@@ -71,5 +73,6 @@ postCtx :: Context String
 postCtx = mconcat
     [ dateField "date" "%B %e, %Y"
     , field "id" $ \item -> return (show (itemIdentifier item))
+    , constField "domainurl" mainDomain
     , defaultContext
     ]
