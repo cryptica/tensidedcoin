@@ -6,7 +6,7 @@ import qualified Data.Set as S
 import           Text.Pandoc.Options
 
 mainDomain :: String
-mainDomain = "http://cryptica.github.io/tensidedcoin"
+mainDomain = "https://cryptica.github.io/tensidedcoin"
 
 mainConfig :: Configuration
 mainConfig = def { destinationDirectory = "docs" }
