@@ -68,6 +68,8 @@ main = hakyllWith mainConfig $ do
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
-postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
+postCtx = mconcat
+    [ dateField "date" "%B %e, %Y"
+    , field "id" $ \item -> return (show (itemIdentifier item))
+    , defaultContext
+    ]
