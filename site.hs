@@ -7,7 +7,7 @@ import           Text.Pandoc.Options
 
 
 mainConfig :: Configuration
-mainConfig = def { destinationDirectory = "doc" }
+mainConfig = def { destinationDirectory = "docs" }
 
 --------------------------------------------------------------------------------
 main :: IO ()
