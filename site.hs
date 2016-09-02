@@ -29,7 +29,7 @@ main = hakyllWith mainConfig $ do
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompilerWith
-            (def { readerExtensions = githubMarkdownExtensions `S.union` readerExtensions def }) def
+            (def { readerExtensions = readerExtensions def `S.union` githubMarkdownExtensions }) def
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
